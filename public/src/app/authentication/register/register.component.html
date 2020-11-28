@@ -1,0 +1,47 @@
+<div class="wrapper">
+  <div class="inner">
+    <img src="../assets/img/image-1.png" alt="" class="image-1">
+    <form [formGroup]="form" (ngSubmit)="registerUser()">
+      <h2> <a routerLink="/home">Home</a></h2>
+      <h2>Have Account? <a routerLink="logini">Login</a></h2>
+      <h3>New Account?</h3>
+      <div class="form-holder">
+        <span class="lnr lnr-user"></span>
+        <input type="text" class="form-control" placeholder="Firstname" formControlName="firstname">
+        <div *ngIf="f.firstname.touched && f.firstname.invalid" class="alert alert-danger">
+          <div *ngIf="f.firstname.errors.required">Firstname is required.</div>
+          <div *ngIf="f.firstname.errors.minlength">Firstname should be 3 character.</div>
+        </div>
+      </div>
+      <div class="form-holder">
+        <span class="lnr lnr-user"></span>
+        <input type="text" class="form-control" placeholder="Lastname" formControlName="lastname">
+        <div *ngIf="f.lastname.touched && f.lastname.invalid" class="alert alert-danger">
+          <div *ngIf="f.lastname.errors.required">Lastname is required.</div>
+          <div *ngIf="f.lastname.errors.minlength">Lastname should be 3 character.</div>
+        </div>
+      </div>
+      <div class="form-holder">
+        <span class="lnr lnr-envelope"></span>
+        <input type="text" class="form-control" placeholder="E-Mail" formControlName="email">
+        <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+          <div *ngIf="f.email.errors.required">Email is required.</div>
+          <div *ngIf="f.email.errors.email">Please, enter valid email address.</div>
+        </div>
+      </div>
+      <div class="form-holder">
+        <span class="lnr lnr-lock"></span>
+        <input type="password" class="form-control" placeholder="Password" formControlName="password">
+      </div>
+      <!-- <div class="form-holder">
+        <span class="lnr lnr-lock"></span>
+        <input type="password" class="form-control" placeholder="Confirm Password">
+      </div> -->
+      <button type="submit">
+        <span>Register</span>
+      </button>
+    </form>
+    <img src="../assets/img/image-2.png" alt="" class="image-2">
+  </div>
+
+</div>

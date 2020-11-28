@@ -1,0 +1,261 @@
+<div class="container-fluid full-height">
+  <!-- <div class="content" role="main"> -->
+  <div class="row row-height">
+    <div class="col-lg-12">
+      <div id="wizard_container" class="wizard" novalidate="novalidate">
+        <form [formGroup]="form" id="wrapped" class="wizard-form" (ngSubmit)="createSurvey()">
+          <input id="website" name="website" type="text" value="">
+          <!-- Leave for security protection, read docs for details -->
+          <div id="middle-wizard" class="wizard-branch wizard-wrapper">
+            <div class="step wizard-step" style="display: none;">
+              <h3 class="main_question wizard-header"><strong>1/5</strong>Please fill with your details</h3>
+              <div class="form-group">
+                <input type="text" formControlName="firstname" name="firstname" class="form-control required valid"
+                  placeholder="First Name"><span for="firstname" class="error" style="display: none;">Required</span>
+              </div>
+              <div class="form-group">
+                <input type="text" formControlName="lastname" name="lastname" class="form-control required valid"
+                  placeholder="Last Name">
+              </div>
+              <div class="form-group">
+                <input type="email" formControlName="email" name="email" class="form-control required valid"
+                  placeholder="Your Email">
+              </div>
+              <div class="form-group">
+                <div class="styled-select clearfix">
+                  <select formControlName="country" class="wide required valid" name="country" style="display: none;">
+                    <option value="">Your Country</option>
+                    <option value="Europe">Europe</option>
+                    <option value="Asia">Asia</option>
+                    <option value="North America">North America</option>
+                    <option value="South America">South America</option>
+                    <option value="Oceania">Oceania</option>
+                  </select>
+                  <div class="nice-select wide required" tabindex="0"><span class="current">Europe</span>
+                    <ul class="list">
+                      <li data-value="" class="option focus">Your Country</li>
+                      <li data-value="Europe" class="option selected">Europe</li>
+                      <li data-value="Asia" class="option">Asia</li>
+                      <li data-value="North America" class="option">North America</li>
+                      <li data-value="South America" class="option">South America</li>
+                      <li data-value="Oceania" class="option">Oceania</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-3">
+                  <div class="form-group">
+                    <input formControlName="age" type="text" name="age" class="form-control valid" placeholder="Age">
+                  </div>
+                </div>
+                <div class="col-9">
+                  <div class="form-group radio_input">
+                    <label class="container_radio">Male
+                      <input formControlName="gender" type="radio" name="gender" value="Male" class="required valid">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="container_radio">Female
+                      <input formControlName="gender" type="radio" name="gender" value="Female" class="required valid">
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <!-- /row -->
+              <div class="form-group terms">
+                <label class="container_check">Please accept our <a href="http://www.ansonika.com/wilio/#"
+                    data-toggle="modal" data-target="#terms-txt">Terms and conditions</a>
+                  <input formControlName="terms" type="checkbox" name="terms" value="Yes" class="required valid">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </div>
+            <!-- /step-->
+            <div class="step wizard-step current" style="">
+              <h3 class="main_question"><strong>2/5</strong>How do rate your overall satisfaction about the service
+                provided?</h3>
+              <div class="form-group">
+                <label class="container_radio version_2">Not Satisfied
+                  <input  formControlName="question_1"  type="radio" name="question_1" value="Not Satisfied" class="required">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="form-group">
+                <label class="container_radio version_2">Quite Satisfied
+                  <input   formControlName="question_1" type="radio" name="question_1" value="Quite Satisfied" class="required">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="form-group">
+                <label class="container_radio version_2">Satisfied
+                  <input   formControlName="question_1" type="radio" name="question_1" value="Satisfied" class="required">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="form-group">
+                <label class="container_radio version_2">Completely Satisfied
+                  <input   formControlName="question_1" type="radio" name="question_1" value="Completely Satisfied" class="required">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+
+              <div class="form-group">
+                <label class="container_radio version_2">Extremely Satisfied
+                  <input   formControlName="question_1" type="radio" name="question_1" value="Extremely Satisfied" class="required">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </div>
+            <!-- /step-->
+            <div class="step wizard-step" style="display: none;">
+              <h3 class="main_question"><strong>3/5</strong>How did you hear about our company?</h3>
+              <div class="form-group">
+                <label class="container_check version_2">Google Search Engine
+                  <input formControlName="question_2" type="checkbox" name="question_2[]" value="Google Search Engine"
+                    class="required">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="form-group">
+                <label class="container_check version_2">A friend of mine
+                  <input formControlName="question_2" type="checkbox" name="question_2[]" value="A friend of mine"
+                    class="required">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="form-group">
+                <label class="container_check version_2">Print Advertise
+                  <input formControlName="question_2" type="checkbox" name="question_2[]" value="Print Advertise"
+                    class="required">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="form-group">
+                <label class="container_check version_2">Newspaper
+                  <input formControlName="question_2" type="checkbox" name="question_2[]" value="Newspaper"
+                    class="required">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="form-group">
+                <label class="container_check version_2">Other
+                  <input formControlName="question_2" type="checkbox" name="question_2[]" value="Other" class="required">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </div>
+            <!-- /step-->
+            <div class="step wizard-step" style="display: none;">
+              <h3 class="main_question"><strong>4/5</strong>Do you think to suggest our company to a friend or parent?
+              </h3>
+              <div class="form-group">
+                <label class="container_radio version_2">No
+                  <input formControlName="question_3" type="radio" name="question_3" value="No" class="required">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="form-group">
+                <label class="container_radio version_2">Maybe
+                  <input formControlName="question_3" type="radio" name="question_3" value="Maybe" class="required">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="form-group">
+                <label class="container_radio version_2">Probably
+                  <input formControlName="question_3" type="radio" name="question_3" value="Probably" class="required">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="form-group">
+                <label class="container_radio version_2">100% Sure
+                  <input formControlName="question_3" type="radio" name="question_3" value="100% Sure" class="required">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="form-group">
+                <label>In no, please describe with few words why</label>
+                <textarea formControlName="q3additional_message" name="q3additional_message" class="form-control"
+                  style="height:100px;" placeholder="Type here additional info..."></textarea>
+              </div>
+            </div>
+            <!-- /step-->
+            <div class="submit step wizard-step" disabled="disabled" style="display: none;">
+              <h3 class="main_question"><strong>5/5</strong>Summary</h3>
+              <div class="summary">
+                <ul>
+                  <li><strong>1</strong>
+                    <h5>How do rate your overall satisfaction about the service provided?</h5>
+                    <textarea formControlName="q5additional_message1" name="q5additional_message1" class="form-control"
+                      style="height:100px;" placeholder="Type here additional info..."></textarea>
+                  </li>
+                  <li><strong>2</strong>
+                    <h5>How did you hear about our company?</h5>
+                    <textarea formControlName="q5additional_message2" name="q5additional_message2" class="form-control"
+                      style="height:100px;" placeholder="Type here additional info..."></textarea>
+                  </li>
+                  <li><strong>3</strong>
+                    <h5>Do you think to suggest our company to a friend or parent?</h5>
+                    <textarea formControlName="q5additional_message3" name="q5additional_message3" class="form-control"
+                      style="height:100px;" placeholder="Type here additional info..."></textarea>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- /step-->
+          </div>
+          <!-- /middle-wizard -->
+          <div id="bottom-wizard">
+            <button type="button" name="backward" class="backward">Prev</button>
+            <button type="button" name="forward" class="forward">Next</button>
+            <button type="submit" name="process" class="submit" disabled="disabled">Submit</button>
+          </div>
+          <!-- /bottom-wizard -->
+        </form>
+      </div>
+      <!-- /Wizard container -->
+    </div>
+    <!-- /content-right-->
+  </div>
+  <!-- /row-->
+  <!-- </div> -->
+  <!-- /container-fluid -->
+
+
+
+
+  <svg id="clouds" alt="Gray Clouds Background" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677"
+    viewBox="0 0 2611.084 485.677">
+    <path id="Path_39" data-name="Path 39"
+      d="M2379.709,863.793c10-93-77-171-168-149-52-114-225-105-264,15-75,3-140,59-152,133-30,2.83-66.725,9.829-93.5,26.25-26.771-16.421-63.5-23.42-93.5-26.25-12-74-77-130-152-133-39-120-212-129-264-15-54.084-13.075-106.753,9.173-138.488,48.9-31.734-39.726-84.4-61.974-138.487-48.9-52-114-225-105-264,15a162.027,162.027,0,0,0-103.147,43.044c-30.633-45.365-87.1-72.091-145.206-58.044-52-114-225-105-264,15-75,3-140,59-152,133-53,5-127,23-130,83-2,42,35,72,70,86,49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33,61.112,8.015,113.854-5.72,150.492-29.764a165.62,165.62,0,0,0,110.861-3.236c47,94,178,113,251,33,31.385,4.116,60.563,2.495,86.487-3.311,25.924,5.806,55.1,7.427,86.488,3.311,73,80,204,61,251-33a165.625,165.625,0,0,0,120,0c51,13,108,15,157-5a147.188,147.188,0,0,0,33.5-18.694,147.217,147.217,0,0,0,33.5,18.694c49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33C2446.709,1093.793,2554.709,922.793,2379.709,863.793Z"
+      transform="translate(142.69 -634.312)" fill="#eee" />
+  </svg>
+</div>
+
+<!-- Modal terms -->
+<div class="modal fade" id="terms-txt" tabindex="-1" role="dialog" aria-labelledby="termsLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="termsLabel">Terms and conditions</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="modal-body">
+        <p>Lorem ipsum dolor sit amet, in porro albucius qui, in <strong>nec quod novum accumsan</strong>, mei ludus
+          tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt
+          sensibus.</p>
+        <p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id.
+          No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus. Lorem ipsum
+          dolor sit amet, <strong>in porro albucius qui</strong>, in nec quod novum accumsan, mei ludus tamquam dolores
+          id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
+        <p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id.
+          No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn_1" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>

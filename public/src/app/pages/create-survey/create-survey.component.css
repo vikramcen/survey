@@ -1,0 +1,15 @@
+mat-form-field {
+    margin-right: 12px;
+  }
+
+  .mat-calendar-next-button::after {
+    border-right-width: 0px !important;
+    transform: translateX(0px) rotate(deg) !important;
+}
+
+
+
+button {
+    border: none !important;
+    width: 15% !important;
+}

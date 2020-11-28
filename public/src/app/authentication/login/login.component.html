@@ -1,0 +1,26 @@
+<div class="wrapper">
+  <div class="inner">
+    <img src="../assets/img/image-2.png" alt="" class="image-3">
+    <form [formGroup]="form" (ngSubmit)="loginUser()">
+      <h2> <a routerLink="/home">Home</a></h2>
+      <h2>New Account? <a routerLink="/register">Register</a></h2>
+      <h3>Have Account?</h3>
+      <div class="form-holder">
+        <span class="lnr lnr-envelope"></span>
+        <input type="text" class="form-control" placeholder="E-Mail" formControlName="email">
+        <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">
+          <div *ngIf="f.email.errors.required">Email is required.</div>
+          <div *ngIf="f.email.errors.email">Please, enter valid email address.</div>
+        </div>
+      </div>
+      <div class="form-holder">
+        <span class="lnr lnr-lock"></span>
+        <input type="password" class="form-control" placeholder="Password" formControlName="password">
+      </div>
+      <button type="submit">
+        <span>Login</span>
+      </button>
+    </form>
+    <img src="../assets/img/image-1.png" alt="" class="image-4">
+  </div>
+</div>
